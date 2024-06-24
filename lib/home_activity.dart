@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pakrandidosenfavorit/opsi_berita.dart';
-import 'package:pakrandidosenfavorit/opsi_edukasi.dart';
+import 'package:pakrandidosenfavorit/opsi_homepage/opsi_berita.dart';
+import 'package:pakrandidosenfavorit/opsi_homepage/opsi_edukasi.dart';
+import 'package:pakrandidosenfavorit/profil/profil.dart';
 
-import 'opsi.dart';
+import 'opsi_homepage/opsi.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,7 +15,10 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.person),
             onPressed: () {
-              // Action untuk icon user
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile())
+              );
             },
           ),
         ],

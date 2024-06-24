@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../berita/dummy_konten_berita.dart';
+
 class OpsiBerita extends StatelessWidget {
   const OpsiBerita({Key? key}) : super(key: key);
 
@@ -40,6 +42,7 @@ class OpsiBerita extends StatelessWidget {
             ),
           ),
           _buildBerita(
+            context,
             image: 'assets/berita.png',
             title: 'Antrian Panjang di Dukcapil',
             date: '26 January 2022',
@@ -47,6 +50,7 @@ class OpsiBerita extends StatelessWidget {
             'Terjadi antrian panjang di kantor dukcapil kota dumai hingga terja..',
           ),
           _buildBerita(
+            context,
             image: 'assets/berita.png',
             title: 'WNA Kesulitan Membuat Dokumen',
             date: '26 January 2022',
@@ -54,6 +58,7 @@ class OpsiBerita extends StatelessWidget {
             'Seorang WNA asal Korea Kesulitan Membuat KTP hingga Tidak Memi..',
           ),
           _buildBerita(
+            context,
             image: 'assets/berita.png',
             title: 'Warga Tidak Memiliki KTP',
             date: '26 January 2022',
@@ -61,6 +66,7 @@ class OpsiBerita extends StatelessWidget {
             'Seorang warga asal cidodol tidak memiliki kartu KTP diduga karen..',
           ),
           _buildBerita(
+            context,
             image: 'assets/berita.png',
             title: 'Judul Berita 4',
             date: '26 January 2022',
@@ -68,6 +74,7 @@ class OpsiBerita extends StatelessWidget {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           ),
           _buildBerita(
+            context,
             image: 'assets/berita.png',
             title: 'Antrian Panjang di Dukcapil',
             date: '26 January 2022',
@@ -79,7 +86,7 @@ class OpsiBerita extends StatelessWidget {
     );
   }
 
-  Widget _buildBerita({
+  Widget _buildBerita(BuildContext context,{
     required String image,
     required String title,
     required String date,
@@ -87,7 +94,14 @@ class OpsiBerita extends StatelessWidget {
   }) {
     return Card(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => KontenBerita1()
+            ),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
