@@ -33,28 +33,58 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Section(title: 'Dokumen Publik', items: [
-                ItemCard(title: 'KTP', imagePath: 'assets/ktp.png'),
-                ItemCard(title: 'SIM', imagePath: 'assets/sim.png'),
-              ]),
+              Section(
+                title: 'Dokumen Publik',
+                items: [
+                  ItemCard(title: 'KTP', imagePath: 'assets/ktp.png'),
+                  ItemCard(title: 'SIM', imagePath: 'assets/sim.png'),
+                ],
+                navigateTo: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondPage()),
+                  );
+                },
+              ),
               SizedBox(height: 20),
-              Section(title: 'Edukasi', items: [
-                ItemCard(
-                    title: 'Cara Praktis Mengganti Kartu Keluarga yang Rusak atau Hilang',
-                    imagePath: 'assets/berita.png'),
-                ItemCard(
-                    title: 'Mengurus Panduan Persyaratan Dokumen Keperluan',
-                    imagePath: 'assets/berita.png'),
-              ]),
+              Section(
+                title: 'Edukasi',
+                items: [
+                  ItemCard(
+                      title: 'Cara Praktis Mengganti Kartu Keluarga yang Rusak atau Hilang',
+                      imagePath: 'assets/berita.png'),
+                  ItemCard(
+                      title: 'Mengurus Panduan Persyaratan Dokumen Keperluan',
+                      imagePath: 'assets/berita.png'),
+                  ItemCard(
+                      title: 'ropai mukanya kayak anjeng',
+                      imagePath: 'assets/berita.png'),
+                ],
+                navigateTo: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OpsiEdukasi()),
+                  );
+                },
+              ),
               SizedBox(height: 18),
-              Section(title: 'Berita', items: [
-                ItemCard(
-                    title: 'WNA asal Korea Kesulitan Membuat Dokumen Kependudukan',
-                    imagePath: 'assets/berita.png'),
-                ItemCard(
-                    title: 'Cara Praktis Mengganti Kartu Keluarga yang Rusak atau Hilang',
-                    imagePath: 'assets/berita.png'),
-              ]),
+              Section(
+                title: 'Berita',
+                items: [
+                  ItemCard(
+                      title: 'WNA asal Korea Kesulitan Membuat Dokumen Kependudukan',
+                      imagePath: 'assets/berita.png'),
+                  ItemCard(
+                      title: 'Cara Praktis Mengganti Kartu Keluarga yang Rusak atau Hilang',
+                      imagePath: 'assets/berita.png'),
+                ],
+                navigateTo: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OpsiBerita()),
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -66,8 +96,9 @@ class HomePage extends StatelessWidget {
 class Section extends StatelessWidget {
   final String title;
   final List<ItemCard> items;
+  final VoidCallback navigateTo;
 
-  Section({required this.title, required this.items});
+  Section({required this.title, required this.items, required this.navigateTo});
 
   @override
   Widget build(BuildContext context) {
@@ -85,12 +116,7 @@ class Section extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => OpsiEdukasi()),
-                );
-              },
+              onPressed: navigateTo,
               child: Text('Lihat Semua'),
             ),
           ],
@@ -121,10 +147,16 @@ class ItemCard extends StatelessWidget {
         children: [
           Image.asset(imagePath, width: 100, height: 100),
           SizedBox(height: 10),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 14,
+          Container(
+            width: 100, // Set width to keep text inside the card
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
           ),
         ],
@@ -132,3 +164,5 @@ class ItemCard extends StatelessWidget {
     );
   }
 }
+
+void main() => runApp(MaterialApp(home: HomePage()));
