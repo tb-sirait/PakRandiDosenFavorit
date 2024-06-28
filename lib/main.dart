@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pakrandidosenfavorit/berita/dummy_konten_berita.dart';
+import 'package:pakrandidosenfavorit/no_tutorial_access.dart';
 import 'package:pakrandidosenfavorit/opsi_homepage/opsi_edukasi.dart';
 import 'package:pakrandidosenfavorit/profil/profil.dart';
 import 'home_activity.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         '/news': (context)=> const OpsiBerita(),
         '/education': (context) => const OpsiEdukasi(),
         '/profile': (context) => const Profile(),
-        '/news/nama-konten-1': (context)=> const KontenBerita1()
+        '/news/nama-konten-1': (context)=> const KontenBerita1(),
+        '/new-access-page': (context)=> noTutorial()
       },
     );
   }

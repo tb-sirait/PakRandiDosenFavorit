@@ -33,7 +33,7 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 16),
             Center(
               child: Text(
-                'Aditya',
+                'kiky a',
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -58,9 +58,9 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 24),
             _buildProfileField('NIK', '197823028927182309217'),
             const SizedBox(height: 16),
-            _buildProfileField('Nama', 'ADITYA FAHLEPI'),
+            _buildProfileField('Nama', 'Mohammad Rizky Arfianto'),
             const SizedBox(height: 16),
-            _buildProfileField('Email', 'ADIY111@GMAIL.COM'),
+            _buildProfileField('Email', 'kikyarfi@adotgrup.org'),
             const SizedBox(height: 16),
             _buildProfileField('Password', '*********'),
             const SizedBox(height: 32),

@@ -14,14 +14,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 3000), () {});
-    Navigator.pushReplacementNamed(context, '/home');
+    Navigator.pushReplacementNamed(context, '/new-access-page');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset('assets/splash.png'),
+        child: InteractiveViewer(
+          minScale: 0.1, // minimum scale
+          maxScale: 2.0, // maximum scale
+          child: Image.asset('assets/splash.png'),
+        ),
       ),
     );
   }

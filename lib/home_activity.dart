@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
                       title: 'Mengurus Panduan Persyaratan Dokumen Keperluan',
                       imagePath: 'assets/berita.png'),
                   ItemCard(
-                      title: 'ropai mukanya kayak anjeng',
+                      title: 'Dokumen publik tidak dapat diakses? begini caranya',
                       imagePath: 'assets/berita.png'),
                 ],
                 navigateTo: () {
