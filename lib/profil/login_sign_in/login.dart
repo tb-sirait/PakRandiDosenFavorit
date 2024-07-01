@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pakrandidosenfavorit/home_activity.dart';
+import 'package:pakrandidosenfavorit/profil/login_sign_in/sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -146,7 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text('Belum memiliki akun?'),
                     TextButton(
                       onPressed: () {
-                        // Navigate to registration screen
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Daftar())
+                        );
                       },
                       child: const Text('Daftar'),
                     ),
